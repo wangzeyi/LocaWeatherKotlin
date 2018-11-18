@@ -49,6 +49,7 @@ class WeatherFragment: Fragment() {
             object :Observer<List<ListItem>>{
                 override fun onChanged(t: List<ListItem>?) {
                     adapter.setList(t!!)
+                    adapter.notifyDataSetChanged()
                     tag.warn { t.get(0).toString() }
                 }
             });
